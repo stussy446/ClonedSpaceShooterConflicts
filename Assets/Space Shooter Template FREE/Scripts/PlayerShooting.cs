@@ -60,7 +60,7 @@ public class PlayerShooting : MonoBehaviour {
     //method for a shot
     void MakeAShot() 
     {
-        switch (weaponPower) // according to weapon power 'pooling' the defined anount of projectiles, on the defined position, in the defined rotation
+        switch (weaponPower) // according to weapon power 'pooling' the defined amount of projectiles, on the defined position, in the defined rotation
         {
             case 1:
                 CreateLazerShot(projectileObject, guns.centralGun.transform.position, Vector3.zero);
