@@ -9,21 +9,25 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public GameObject destructionFX;
+    [SerializeField] private GameObject destructionFX;
+    [SerializeField] private int health = 3;
 
-    public static Player instance; 
+    public static Player instance;
 
     private void Awake()
     {
-        if (instance == null) 
+        if (instance == null)
             instance = this;
     }
 
     //method for damage proceccing by 'Player'
-    public void GetDamage(int damage)   
+    public void GetDamage(int damage)
     {
-        Destruction();
-    }    
+        health -= damage;
+
+        if (health <= 0)
+            Destruction();
+    }
 
     //'Player's' destruction procedure
     void Destruction()
