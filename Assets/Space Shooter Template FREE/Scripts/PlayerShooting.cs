@@ -8,7 +8,7 @@ using UnityEngine;
 public class Guns
 {
     public GameObject rightGun, leftGun, centralGun;
-    [HideInInspector] public ParticleSystem leftGunVFX, rightGunVFX, centralGunVFX; 
+    [HideInInspector] public ParticleSystem leftGunVFX, rightGunVFX, centralGunVFX;
 }
 
 public class PlayerShooting : MonoBehaviour {
@@ -17,7 +17,7 @@ public class PlayerShooting : MonoBehaviour {
     public float fireRate;
 
     [Tooltip("projectile prefab")]
-    public GameObject projectileObject;
+    public List<GameObject> projectileObjects;
 
     //time for a new shot
     [HideInInspector] public float nextFire;
@@ -25,11 +25,11 @@ public class PlayerShooting : MonoBehaviour {
 
     [Tooltip("current weapon power")]
     [Range(1, 4)]       //change it if you wish
-    public int weaponPower = 1; 
+    public int weaponPower = 1;
 
     public Guns guns;
-    bool shootingIsActive = true; 
-    [HideInInspector] public int maxweaponPower = 4; 
+    bool shootingIsActive = true;
+    [HideInInspector] public int maxweaponPower = 4;
     public static PlayerShooting instance;
 
     private void Awake()
@@ -51,15 +51,17 @@ public class PlayerShooting : MonoBehaviour {
         {
             if (Time.time > nextFire)
             {
-                MakeAShot();                                                         
+                MakeAShot();
                 nextFire = Time.time + 1 / fireRate;
             }
         }
     }
 
     //method for a shot
-    void MakeAShot() 
+    void MakeAShot()
     {
+        var projectileObject = projectileObjects[Random.Range(0, projectileObjects.Count)];
+
         switch (weaponPower) // according to weapon power 'pooling' the defined amount of projectiles, on the defined position, in the defined rotation
         {
             case 1:
