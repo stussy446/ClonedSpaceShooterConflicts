@@ -162,6 +162,30 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114960433178452790, guid: 8e33fda0c220936498f5288af83d7450, type: 3}
+      propertyPath: mainDestructionFX
+      value: 
+      objectReference: {fileID: 1587261729604890, guid: 600ec83cba1cec448bf41a6607229741, type: 3}
+    - target: {fileID: 114960433178452790, guid: 8e33fda0c220936498f5288af83d7450, type: 3}
+      propertyPath: tertiaryDestructionFX
+      value: 
+      objectReference: {fileID: 1280240331523082, guid: 031faf5ef0ec4c34c86671fa3e2e81d1, type: 3}
+    - target: {fileID: 114960433178452790, guid: 8e33fda0c220936498f5288af83d7450, type: 3}
+      propertyPath: secondaryDestructionFX
+      value: 
+      objectReference: {fileID: 1280240331523082, guid: 45ae5851ef2832044bba82850372d67b, type: 3}
+    - target: {fileID: 199119291531354066, guid: 8e33fda0c220936498f5288af83d7450, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199518571506553476, guid: 8e33fda0c220936498f5288af83d7450, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199584380043267246, guid: 8e33fda0c220936498f5288af83d7450, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e33fda0c220936498f5288af83d7450, type: 3}
 --- !u!1001 &974050356
