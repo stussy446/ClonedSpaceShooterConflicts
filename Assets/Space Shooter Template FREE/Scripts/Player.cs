@@ -7,12 +7,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject mainDestructionFX;
-    public GameObject secondaryDestructionFX;
-    public GameObject tertiaryDestructionFX;
+    [SerializeField] private GameObject destructionFX;
+    [SerializeField] private int health = 3;
 
     public static Player instance;
-    public float destructionFXRange = .4f;
 
     private void Awake()
     {
@@ -23,7 +21,10 @@ public class Player : MonoBehaviour
     //method for damage proceccing by 'Player'
     public void GetDamage(int damage)
     {
-        StartCoroutine(Destruction());
+        health -= damage;
+
+        if (health <= 0)
+            Destruction();
     }
 
     //'Player's' destruction procedure
